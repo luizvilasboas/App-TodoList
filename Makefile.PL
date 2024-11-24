@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
@@ -8,7 +11,7 @@ WriteMakefile(
         'File::HomeDir'  => 0,
         'File::Spec'     => 0,
     },
-    ABSTRACT_FROM => 'lib/App/TodoList.pm',
+    ABSTRACT      => 'Simple command-line to-do list manager written in Perl',
     AUTHOR        => 'Luiz Felipe de Castro Vilas Boas <luizfelipecastrovb@gmail.com>',
     LICENSE       => 'MIT',
     META_MERGE    => {

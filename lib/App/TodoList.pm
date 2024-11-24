@@ -79,82 +79,65 @@ __END__
 
 =head1 NAME
 
-App::TodoList - A simple module for managing tasks in a to-do list.
-
-=head1 VERSION
-
-Version 0.1.0
+todo_list - Simple command-line to-do list manager written in Perl.
 
 =head1 SYNOPSIS
 
-    use TodoList;
-
-    # Create a new TodoList object (tasks are stored in .tasks.json by default)
-    my $todo = TodoList->new();
-
-    # Add a task to the list
-    my $task_count = $todo->add_task("Buy milk");
-
-    # List all tasks
-    my @tasks = $todo->list_tasks();
-
-    # Complete a task by its index
-    $todo->complete_task(1);
-
-    # Delete a task by its index
-    $todo->delete_task(1);
+    todo_list [options]
 
 =head1 DESCRIPTION
 
-The C<TodoList> module provides a simple interface for managing tasks in a to-do list.
-It allows the creation of tasks, marking them as completed, and deleting tasks.
-Tasks are stored in a JSON file, which is loaded from and saved back to the user's home directory by default.
+This script allows users to add, list, complete, and delete tasks, and saves the tasks in a JSON file located in the user's home directory.
 
-=head2 Methods
+=head1 OPTIONS
 
-=head3 new
+=over 4
 
-    my $todo = TodoList->new();
+=item --add <task_description>
 
-Creates a new C<TodoList> object. Optionally, you can specify the file to store tasks in via the C<file> parameter. By default, the tasks are stored in a file called C<.tasks.json> in the user's home directory.
+Add a task.
 
-=head3 add_task
+Example:
 
-    my $task_count = $todo->add_task("Buy milk");
+    todo_list --add "Buy groceries"
 
-Adds a new task to the list. Returns the total number of tasks in the list after adding the new task.
+=item --list
 
-=head3 list_tasks
+List all tasks.
 
-    my @tasks = $todo->list_tasks();
+Example:
 
-Returns a list of all tasks. Each task is represented as a hash with keys C<task> and C<completed>.
+    todo_list --list
 
-=head3 complete_task
+=item --delete <task_number>
 
-    $todo->complete_task($index);
+Delete a task.
 
-Marks the task at the specified C<index> as completed (C<completed => 1>). Returns 1 if the task was successfully marked as completed, or 0 if the index is invalid.
+Example:
 
-=head3 delete_task
+    todo_list --delete 1
 
-    $todo->delete_task($index);
+=item --complete <task_number>
 
-Deletes the task at the specified C<index>. Returns 1 if the task was successfully deleted, or 0 if the index is invalid.
+Mark a task as completed.
 
-=head1 PRIVATE METHODS
+Example:
 
-=head3 _load_tasks
+    todo_list --complete 1
 
-    $self->_load_tasks();
+=item --help
 
-Loads tasks from the specified file (C<.tasks.json> by default). If the file exists and contains valid JSON, the tasks are decoded into an array of task hashes.
+Display this help message.
 
-=head3 _save_tasks
+=back
 
-    $self->_save_tasks();
+=head1 ERRORS
 
-Saves the current list of tasks to the specified file (C<.tasks.json> by default) in JSON format.
+If there is an error during any operation (such as adding, editing, or removing passwords), an error message will be displayed indicating the issue.
+
+=head1 DEPENDENCIES
+
+This script requires the L<Getopt::Long> module for command-line argument handling and the L<App::TodoList> module for password management operations.
 
 =head1 AUTHOR
 
