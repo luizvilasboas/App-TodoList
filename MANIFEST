@@ -2,5 +2,5 @@ Makefile.PL
 MANIFEST
 README.md
 lib/App/TodoList.pm
-script/todo
+script/todo_list
 t/01-todo_list.t

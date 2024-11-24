@@ -17,5 +17,5 @@ WriteMakefile(
         },
     },
     INSTALLDIRS => 'site',
-    EXE_FILES   => ['script/todo'],
+    EXE_FILES   => ['script/todo_list'],
 );
