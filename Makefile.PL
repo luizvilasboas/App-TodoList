@@ -8,7 +8,7 @@ WriteMakefile(
         'File::HomeDir'  => 0,
         'File::Spec'     => 0,
     },
-    ABSTRACT      => 'Gerenciador de tarefas simples',
+    ABSTRACT_FROM => 'lib/App/TodoList.pm',
     AUTHOR        => 'Luiz Felipe de Castro Vilas Boas <luizfelipecastrovb@gmail.com>',
     LICENSE       => 'MIT',
     META_MERGE    => {

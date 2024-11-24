@@ -72,9 +72,14 @@ sub _save_tasks {
     close $fh;
 }
 
+1;
+__END__
+
+=encoding utf-8
+
 =head1 NAME
 
-TodoList - A simple module for managing tasks in a to-do list.
+App::TodoList - A simple module for managing tasks in a to-do list.
 
 =head1 VERSION
 
@@ -153,12 +158,10 @@ Saves the current list of tasks to the specified file (C<.tasks.json> by default
 
 =head1 AUTHOR
 
-Your Name <your.email@example.com>
+Luiz Felipe de Castro Vilas Boas <luizfelipecastrovb@gmail.com>
 
 =head1 LICENSE
 
 This module is released under the MIT License. See the LICENSE file for more details.
 
 =cut
-
-1;
