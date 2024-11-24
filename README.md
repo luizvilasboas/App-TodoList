@@ -33,34 +33,34 @@ sudo make install
 After installation, you can use the to-do list manager via the command-line interface. The following options are available:
 
 ```
-todo --add "Task description"      # Add a new task
-todo --list                        # List all tasks
-todo --complete <task_number>      # Mark a task as completed
-todo --delete <task_number>        # Delete a task
+todo_list --add "Task description"      # Add a new task
+todo_list --list                        # List all tasks
+todo_list --complete <task_number>      # Mark a task as completed
+todo_list --delete <task_number>        # Delete a task
 ```
 
 For example, to add a task:
 
 ```
-todo --add "Buy groceries"
+todo_list --add "Buy groceries"
 ```
 
 To list all tasks:
 
 ```
-todo --list
+todo_list --list
 ```
 
 To mark a task as completed:
 
 ```
-todo --complete 1  # Marks the task with index 1 as completed
+todo_list --complete 1  # Marks the task with index 1 as completed
 ```
 
 To delete a task:
 
 ```
-todo --delete 1  # Deletes the task with index 1
+todo_list --delete 1  # Deletes the task with index 1
 ```
 
 ## Dependencies
