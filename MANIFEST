@@ -3,4 +3,6 @@ MANIFEST
 README.md
 lib/App/TodoList.pm
 script/todo_list
-t/01-todo_list.t
+t/01_load.t
+t/02_functionality.t
+t/03_pod_syntax.t
