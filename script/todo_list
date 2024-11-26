@@ -7,7 +7,7 @@ use lib "lib";
 use Getopt::Long;
 use App::TodoList;
 
-my $todo = TodoList->new();
+my $todo = App::TodoList->new();
 
 sub show_help {
     print <<"END_HELP";

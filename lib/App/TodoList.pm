@@ -1,4 +1,4 @@
-package TodoList;
+package App::TodoList;
 
 use strict;
 use warnings;
@@ -7,7 +7,7 @@ use JSON;
 use File::HomeDir;
 use File::Spec;
 
-our $VERSION = '0.1.0'; 
+our $VERSION = '1.0.0'; 
 
 sub new {
     my ($class, %args) = @_;

@@ -11,7 +11,7 @@ use App::TodoList;
 subtest 'Adding tasks' => sub {
     my ($fh, $tempfile) = tempfile(UNLINK => 1);
 
-    my $todo = TodoList->new(file => $tempfile);
+    my $todo = App::TodoList->new(file => $tempfile);
 
     my $task_count = $todo->add_task("Learn Perl");
     is($task_count, 1, "Task added successfully");
@@ -23,7 +23,7 @@ subtest 'Adding tasks' => sub {
 subtest 'Listing tasks' => sub {
     my ($fh, $tempfile) = tempfile(UNLINK => 1);
 
-    my $todo = TodoList->new(file => $tempfile);
+    my $todo = App::TodoList->new(file => $tempfile);
 
     my $task_count = $todo->add_task("Learn Perl");
 
@@ -36,7 +36,7 @@ subtest 'Listing tasks' => sub {
 subtest 'Completing tasks' => sub {
     my ($fh, $tempfile) = tempfile(UNLINK => 1);
 
-    my $todo = TodoList->new(file => $tempfile);
+    my $todo = App::TodoList->new(file => $tempfile);
 
     my $task_count = $todo->add_task("Learn Perl");
 
@@ -48,7 +48,7 @@ subtest 'Completing tasks' => sub {
 subtest 'Deleting tasks' => sub {
     my ($fh, $tempfile) = tempfile(UNLINK => 1);
 
-    my $todo = TodoList->new(file => $tempfile);
+    my $todo = App::TodoList->new(file => $tempfile);
 
     my $task_count = $todo->add_task("Learn Perl");
 
@@ -60,7 +60,7 @@ subtest 'Deleting tasks' => sub {
 subtest 'Invalid task operations' => sub {
     my ($fh, $tempfile) = tempfile(UNLINK => 1);
 
-    my $todo = TodoList->new(file => $tempfile);
+    my $todo = App::TodoList->new(file => $tempfile);
 
     ok(!$todo->complete_task(99), "Completing non-existent task returns false");
     ok(!$todo->delete_task(99), "Deleting non-existent task returns false");
@@ -69,12 +69,12 @@ subtest 'Invalid task operations' => sub {
 subtest 'Reloading tasks from file' => sub {
     my ($fh, $tempfile) = tempfile(UNLINK => 1);
 
-    my $todo = TodoList->new(file => $tempfile);
+    my $todo = App::TodoList->new(file => $tempfile);
 
     $todo->add_task("New Task");
     undef $todo;
 
-    my $new_todo = TodoList->new(file => $tempfile);
+    my $new_todo = App::TodoList->new(file => $tempfile);
     my @new_tasks = $new_todo->list_tasks();
     is(scalar @new_tasks, 1, "Tasks loaded from file correctly after reload");
     is($new_tasks[0]->{task}, "New Task", "New task loaded correctly from file");
