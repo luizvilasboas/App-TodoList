@@ -12,7 +12,7 @@
 
 ## Installation
 
-You can install `App-TodoList` manually.
+You can install `App-TodoList` manually or from [MetaCPAN](https://metacpan.org/dist/App-TodoList).
 
 ### Manual Installation
 
@@ -24,6 +24,14 @@ You can install `App-TodoList` manually.
 perl Makefile.PL
 make
 sudo make install
+```
+
+### MetaCPAN
+
+1. User [cpanm](https://metacpan.org/dist/App-cpanminus/view/lib/App/cpanminus/fatscript.pm) to install the app:
+
+```
+cpanm install App::TodoList
 ```
 
 ## Usage
