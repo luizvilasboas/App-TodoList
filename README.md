@@ -94,4 +94,4 @@ cpanm JSON File::HomeDir File::Spec
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://gitlab.com/olooeez/app-todolist/-/blob/main/LICENSE?ref_type=heads) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/luizvilasboas/App-TodoList/blob/main/LICENSE) file for details.
