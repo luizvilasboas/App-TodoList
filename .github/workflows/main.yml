@@ -19,7 +19,11 @@ jobs:
         with:
           perl-version: '5.38'
           install-modules-with: cpanm
-          install-modules-args: --installdeps . --notest
+          install-modules-args: --notest
+          install-modules: |
+            JSON
+            File::HomeDir
+            File::Spec
       - name: Build module
         run: |
           perl Makefile.PL
