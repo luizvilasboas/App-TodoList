@@ -1,97 +1,88 @@
 # App-TodoList
 
-`App::TodoList` is a simple command-line to-do list manager written in Perl. It allows users to add, list, complete, and delete tasks, and saves the tasks in a JSON file located in the user's home directory.
+> A simple command-line to-do list manager written in Perl.
 
-## Features
+## About the Project
 
-- **Add Task**: Add a new task to the to-do list.
-- **List Tasks**: Display the current to-do list with task status (completed or not).
-- **Complete Task**: Mark a specific task as completed.
-- **Delete Task**: Remove a task from the list.
-- **Persistent Storage**: Tasks are saved in a JSON file in the user's home directory.
+`App::TodoList` is a CLI tool that allows users to add, list, complete, and delete tasks directly from the terminal. All tasks are saved in a JSON file located in the user's home directory for persistent storage.
 
-## Installation
+Key features include:
+*   **Add Task**: Add a new task to the to-do list.
+*   **List Tasks**: Display the current to-do list with task status (completed or not).
+*   **Complete Task**: Mark a specific task as completed.
+*   **Delete Task**: Remove a task from the list.
+*   **Persistent Storage**: Tasks are saved locally in a JSON file.
 
-You can install `App-TodoList` manually or from [MetaCPAN](https://metacpan.org/dist/App-TodoList).
+## Tech Stack
 
-### Manual Installation
+The main technologies and libraries used in this project are:
 
-1. Clone or download the repository.
-2. Navigate to the project directory.
-3. Run the following commands to build and install the module:
+*   [Perl](https://www.perl.org/)
+*   [JSON](https://metacpan.org/pod/JSON)
+*   [File::HomeDir](https://metacpan.org/pod/File::HomeDir)
 
+## Usage
+
+Below are the instructions for you to set up and run the project.
+
+### Prerequisites
+
+You need to have the following software installed:
+
+*   [Perl](https://www.perl.org/get.html)
+*   [cpanm](https://metacpan.org/pod/App::cpanminus) (a common Perl module installer)
+
+### Installation and Setup
+
+You can install the application via MetaCPAN (recommended) or manually.
+
+**1. Install from MetaCPAN**
+```bash
+cpanm install App::TodoList
 ```
+
+**2. Manual Installation**
+```bash
+# Clone the repository
+git clone https://github.com/luizvilasboas/App-TodoList.git
+cd App-TodoList
+
+# Install dependencies
+cpanm --installdeps .
+
+# Build and install the module
 perl Makefile.PL
 make
 sudo make install
 ```
 
-### MetaCPAN
+### Workflow
 
-1. User [cpanm](https://metacpan.org/dist/App-cpanminus/view/lib/App/cpanminus/fatscript.pm) to install the app:
+After installation, you can use the `todo_list` command-line tool:
 
-```
-cpanm install App::TodoList
-```
-
-## Usage
-
-### Command-Line Tool
-
-After installation, you can use the to-do list manager via the command-line interface. The following options are available:
-
-```
-todo_list --add "Task description"      # Add a new task
-todo_list --list                        # List all tasks
-todo_list --complete <task_number>      # Mark a task as completed
-todo_list --delete <task_number>        # Delete a task
-```
-
-For example, to add a task:
-
-```
-todo_list --add "Buy groceries"
-```
-
-To list all tasks:
-
-```
-todo_list --list
-```
-
-To mark a task as completed:
-
-```
-todo_list --complete 1  # Marks the task with index 1 as completed
-```
-
-To delete a task:
-
-```
-todo_list --delete 1  # Deletes the task with index 1
-```
-
-## Dependencies
-
-- `JSON`
-- `File::HomeDir`
-- `File::Spec`
-
-You can install the necessary dependencies via `cpanm`:
-
-```
-cpanm JSON File::HomeDir File::Spec
-```
+*   **Add a new task:**
+    ```bash
+    todo_list --add "Buy groceries"
+    ```
+*   **List all tasks:**
+    ```bash
+    todo_list --list
+    ```
+*   **Mark a task as completed (e.g., task number 1):**
+    ```bash
+    todo_list --complete 1
+    ```
+*   **Delete a task (e.g., task number 1):**
+    ```bash
+    todo_list --delete 1
+    ```
 
 ## Contributing
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Create a merge request.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/luizvilasboas/App-TodoList/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
